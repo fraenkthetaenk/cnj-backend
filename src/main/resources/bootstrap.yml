@@ -1,0 +1,9 @@
+spring:
+    application:
+        name: hm-steiner-cnj
+---
+spring:
+     profiles: dev, cloud
+     cloud:
+         config:
+             uri: https://hm-steiner-config-server.cfapps.io
