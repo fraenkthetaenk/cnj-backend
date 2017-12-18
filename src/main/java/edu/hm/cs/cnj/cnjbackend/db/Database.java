@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-public class db {
+public class Database {
 	@Value("${spring.datasource.url}")
 	private String dbUrl;
 

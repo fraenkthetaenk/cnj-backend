@@ -6,4 +6,4 @@ cnj:
 spring:
     h2:
         console:
-            enabled: true		
+            enabled: true   
