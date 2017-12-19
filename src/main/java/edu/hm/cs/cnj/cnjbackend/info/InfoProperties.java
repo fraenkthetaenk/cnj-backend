@@ -8,15 +8,10 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix="cnj.info")
 public class InfoProperties {
 
-    @Value("${spring.datasource.url}")
-    private String dbUrl;
-    @Value("${spring.datasource.url2:default}")
-    private String dbUrl2;
-    
 	String message;
 	
 	public void setMessage(String message){
-		this.message = message +dbUrl + dbUrl2;
+		this.message = message;
 	}
 	
 	public String getMessage()
