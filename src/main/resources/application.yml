@@ -6,4 +6,6 @@ cnj:
 spring:
     h2:
         console:
-            enabled: true   
+            enabled: true
+    datasource:
+        url: ${JDBC_DATABASE_URL:}
