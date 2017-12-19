@@ -17,7 +17,7 @@ import com.zaxxer.hikari.HikariDataSource;
 public class DatabaseProperties {
 
     @Value("${spring.datasource.url}")
-    private String dbUrl;
+    private String jdbcUrl;
 //
 //    @Autowired
 //    private DataSource dataSource;
