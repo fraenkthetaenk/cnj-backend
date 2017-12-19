@@ -8,24 +8,24 @@ import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel("Server-Info")
 public class Info {
-	
-	@ApiModelProperty(example="Alletsuper!", readOnly=true)
-	String message;
-	
-	@Value("${spring.datasource.url}")
-	  private String dbUrl;
-	@Value("${spring.datasource.url2}")
+
+    @ApiModelProperty(example = "Alletsuper!", readOnly = true)
+    String message;
+
+    @Value("${spring.datasource.url}")
+    private String dbUrl;
+    @Value("${spring.datasource.url2:default}")
     private String dbUrl2;
 
-	public Info() {
-		// Default constructor.
-	}
+    public Info() {
+        // Default constructor.
+    }
 
-	public String getMessage() {
-		return message +dbUrl+dbUrl2;
-	}
+    public String getMessage() {
+        return message + dbUrl + dbUrl2;
+    }
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }
