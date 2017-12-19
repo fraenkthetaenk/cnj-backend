@@ -14,13 +14,15 @@ public class Info {
 	
 	@Value("${spring.datasource.url}")
 	  private String dbUrl;
+	@Value("${spring.datasource.url2}")
+    private String dbUrl2;
 
 	public Info() {
 		// Default constructor.
 	}
 
 	public String getMessage() {
-		return message +dbUrl;
+		return message +dbUrl+dbUrl2;
 	}
 
 	public void setMessage(String message) {
