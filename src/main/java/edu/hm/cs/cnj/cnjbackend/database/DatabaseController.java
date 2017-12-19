@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("/db")
 public class DatabaseController {
+    
         @Autowired
         DatabaseProperties properties;
         
