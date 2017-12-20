@@ -23,7 +23,7 @@ import org.hibernate.validator.constraints.Length;
 public class Veranstaltung {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @Column(length=140, unique=true)
