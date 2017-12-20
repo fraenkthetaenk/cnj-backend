@@ -46,7 +46,7 @@ public class DatabaseController {
             try {
                 Connection con = dataSource.getConnection();
                 Statement stmt = con.createStatement();
-//                stmt.executeUpdate("CREATE TABLE IF NOT EXISTS infos (info timestamp)");
+                stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Veranstaltung (info timestamp)");
 //                stmt.executeUpdate("INSERT INTO info VALUES (now())");
                 ResultSet rs = stmt.executeQuery("SELECT * FROM Veranstaltung");
 
