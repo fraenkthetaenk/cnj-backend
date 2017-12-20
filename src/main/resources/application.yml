@@ -8,7 +8,6 @@ spring:
         console:
             enabled: true
     datasource:
-        url2: test
         url: ${JDBC_DATABASE_URL:}
         hikari:
             connection-timeout:30000
