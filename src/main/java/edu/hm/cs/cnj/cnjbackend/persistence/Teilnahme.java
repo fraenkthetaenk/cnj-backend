@@ -15,7 +15,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Teilnahme {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
     @Column(length = 255)
     @NotNull
