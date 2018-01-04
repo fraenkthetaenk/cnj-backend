@@ -12,13 +12,13 @@ public class Info {
     String message;
 
 
-
     public Info() {
         // Default constructor.
     }
 
     public String getMessage() {
         return message;
+
     }
 
     public void setMessage(String message) {

@@ -18,3 +18,4 @@ spring:
             minIdle:2
             initialSize:5
             removeAbandoned:true
+
