@@ -25,7 +25,7 @@ import org.springframework.beans.factory.annotation.Value;
 public class CnjBackendApplication {
 	
 	@Value("${spring.datasource.url}")
-    private String jdbcUrl;
+    private static String jdbcUrl;
 
 	public static void main(String[] args) {
 
