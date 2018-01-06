@@ -12,9 +12,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
-import java.sql.Connection;
 import java.sql.SQLException;
 import org.springframework.beans.factory.annotation.Value;
 
