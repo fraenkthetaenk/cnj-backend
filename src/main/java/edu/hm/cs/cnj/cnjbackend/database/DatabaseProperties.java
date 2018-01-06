@@ -40,11 +40,11 @@ public class DatabaseProperties {
 
      @Bean
      public DataSource dataSource() throws SQLException {
-     if (dbUrl == null || dbUrl.isEmpty()) {
+     if (jdbcUrl == null || jdbcUrl.isEmpty()) {
      return new HikariDataSource();
      } else {
      HikariConfig config = new HikariConfig();
-     config.setJdbcUrl(dbUrl);
+     config.setJdbcUrl(jdbcUrl);
      return new HikariDataSource(config);
      }
      }
