@@ -19,8 +19,8 @@ public class DatabaseProperties {
     @Value("${spring.datasource.url}")
     private String jdbcUrl;
     //
-    // @Autowired
-    // private DataSource dataSource;
+     @Autowired
+     private DataSource dataSource;
 
     public Connection getConnection() {
         DataSource dataSource = null;
@@ -38,15 +38,15 @@ public class DatabaseProperties {
         }
     }
 
-    // @Bean
-    // public DataSource dataSource() throws SQLException {
-    // if (dbUrl == null || dbUrl.isEmpty()) {
-    // return new HikariDataSource();
-    // } else {
-    // HikariConfig config = new HikariConfig();
-    // config.setJdbcUrl(dbUrl);
-    // return new HikariDataSource(config);
-    // }
-    // }
+     @Bean
+     public DataSource dataSource() throws SQLException {
+     if (dbUrl == null || dbUrl.isEmpty()) {
+     return new HikariDataSource();
+     } else {
+     HikariConfig config = new HikariConfig();
+     config.setJdbcUrl(dbUrl);
+     return new HikariDataSource(config);
+     }
+     }
 
 }

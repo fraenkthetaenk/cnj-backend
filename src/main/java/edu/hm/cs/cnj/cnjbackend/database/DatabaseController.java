@@ -20,15 +20,15 @@ import com.zaxxer.hikari.HikariDataSource;
 @RequestMapping("/db")
 public class DatabaseController {
 
-    // @Autowired
-    // DatabaseProperties properties;
+     @Autowired
+     DatabaseProperties properties;
     //
 
     @Value("${spring.datasource.url}")
     private String jdbcUrl;
     //
-    // @Autowired
-    // private DataSource dataSource;
+    @Autowired
+    private DataSource dataSource;
 
     public String getRecords() {
 
