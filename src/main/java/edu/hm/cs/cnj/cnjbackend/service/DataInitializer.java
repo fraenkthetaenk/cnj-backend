@@ -61,7 +61,7 @@ public class DataInitializer {
 		veranstaltungen.erzeugeVeranstaltung(v2);	
     
             } catch (Exception e) {
-                throw e;
+                
             }
 	
 	}
