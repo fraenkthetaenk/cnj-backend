@@ -46,7 +46,7 @@ public class DataInitializer {
                 Connection con = dataSource.getConnection();
                 Statement stmt = con.createStatement();
                 stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Veranstaltung (id serial, titel varchar(140), beschreibung varchar(1000), beginn date)");
-                stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Teilnahmen (id serial, name varchar(255), begleiter integer, status varchar(20), veranstaltung_id integer)");
+                stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Teilnahme (id serial, name varchar(255), begleiter integer, status varchar(20), veranstaltung_id integer)");
     
             } catch (Exception e) {
                 
