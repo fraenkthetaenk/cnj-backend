@@ -15,40 +15,40 @@ import edu.hm.cs.cnj.cnjbackend.persistence.VeranstaltungRepository;
 @Transactional
 public class VeranstaltungService {
 
-	@Autowired
-	private VeranstaltungRepository repository;
-	
-	@Autowired
-	private VeranstaltungMapper mapper;
+    @Autowired
+    private VeranstaltungRepository repository;
+    
+    @Autowired
+    private VeranstaltungMapper mapper;
 
-	public VeranstaltungDto erzeugeVeranstaltung(VeranstaltungDto veranstaltungDto) {
-		Veranstaltung veranstaltung = mapper.createEntity(veranstaltungDto);
-		
-		// Vor dem Speichern sollte die fachliche Prüfung stattfinden!		
-		repository.save(veranstaltung);
-				
-		return mapper.createDto(veranstaltung);
-	}
+    public VeranstaltungDto erzeugeVeranstaltung(VeranstaltungDto veranstaltungDto) {
+        Veranstaltung veranstaltung = mapper.createEntity(veranstaltungDto);
+        
+        // Vor dem Speichern sollte die fachliche Prüfung stattfinden!      
+        repository.save(veranstaltung);
+                
+        return mapper.createDto(veranstaltung);
+    }
 
-	public VeranstaltungDto findeVeranstaltung(long id) {
-		return mapper.createDto(repository.findOne(id));
-	}
+    public VeranstaltungDto findeVeranstaltung(long id) {
+        return mapper.createDto(repository.findOne(id));
+    }
 
-	public VeranstaltungDto aktualisiere(VeranstaltungDto veranstaltungDto) {
-		Veranstaltung veranstaltung = repository.findOne(veranstaltungDto.getId());
-		mapper.map(veranstaltungDto, veranstaltung);
-		return mapper.createDto(veranstaltung);
-	}
+    public VeranstaltungDto aktualisiere(VeranstaltungDto veranstaltungDto) {
+        Veranstaltung veranstaltung = repository.findOne(veranstaltungDto.getId());
+        mapper.map(veranstaltungDto, veranstaltung);
+        return mapper.createDto(veranstaltung);
+    }
 
-	public void loescheVeranstaltung(Long id) {
-		repository.delete(id);
-	}
+    public void loescheVeranstaltung(Long id) {
+        repository.delete(id);
+    }
 
-	public Collection<VeranstaltungDto> findeVeranstaltungen(boolean vergangeneEventsAnzeigen) {
-		if (vergangeneEventsAnzeigen) {
-			return mapper.createDtoList(repository.findAll());
-		} else {
-			return mapper.createDtoList(repository.findByBeginnAfter(new Date()));
-		}
-	}
+    public Collection<VeranstaltungDto> findeVeranstaltungen(boolean vergangeneEventsAnzeigen) {
+        if (vergangeneEventsAnzeigen) {
+            return mapper.createDtoList(repository.findAll());
+        } else {
+            return mapper.createDtoList(repository.findByBeginnAfter(new Date()));
+        }
+    }
 }

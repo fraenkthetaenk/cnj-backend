@@ -14,44 +14,44 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 public class Teilnahme {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	Long id;
-	@Column(length = 255)
-	@NotNull
-	private String name;
-	@Min(0)
-	@Max(20)
-	private int begleiter;
-	@Enumerated(EnumType.STRING)
-	private TeilnahmeStatus status = TeilnahmeStatus.OFFEN;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
+    @Column(length = 255)
+    @NotNull
+    private String name;
+    @Min(0)
+    @Max(20)
+    private int begleiter;
+    @Enumerated(EnumType.STRING)
+    private TeilnahmeStatus status = TeilnahmeStatus.OFFEN;
 
-	public Teilnahme() {
-		// Default-Konstruktor fuer JPA
-	}
+    public Teilnahme() {
+        // Default-Konstruktor fuer JPA
+    }
 
-	public Teilnahme(String name, int begleiter) {
-		this.name = name;
-		this.begleiter = begleiter;
-	}
+    public Teilnahme(String name, int begleiter) {
+        this.name = name;
+        this.begleiter = begleiter;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public TeilnahmeStatus getStatus() {
-		return status;
-	}
+    public TeilnahmeStatus getStatus() {
+        return status;
+    }
 
-	public void setStatus(TeilnahmeStatus status) {
-		this.status = status;
-	}
+    public void setStatus(TeilnahmeStatus status) {
+        this.status = status;
+    }
 
-	@ManyToOne
-	@NotNull
-	private Veranstaltung veranstaltung;
+    @ManyToOne
+    @NotNull
+    private Veranstaltung veranstaltung;
 
-	void setVeranstaltung(Veranstaltung veranstaltung) {
-		this.veranstaltung = veranstaltung;
-	}
+    void setVeranstaltung(Veranstaltung veranstaltung) {
+        this.veranstaltung = veranstaltung;
+    }
 }
